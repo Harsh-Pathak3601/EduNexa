@@ -1,0 +1,35 @@
+# dependencies
+/node_modules
+**/node_modules
+
+# build outputs
+/build
+/dist
+/.next
+/out
+
+# testing
+/coverage
+
+# env files (ALL locations)
+.env
+.env.*
+**/.env
+**/.env.*
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor files
+.vscode
+.idea
+
+# misc
+*.local
