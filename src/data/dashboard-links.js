@@ -36,6 +36,13 @@ export const sidebarLinks = [
     icon: "VscMortarBoard",
   },
   {
+    id: 6,
+    name: "Admin Panel",
+    path: "/dashboard/admin-panel",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "VscLayers",
+  },
+  {
     id: 7,
     name: "Cart",
     path: "/dashboard/cart",

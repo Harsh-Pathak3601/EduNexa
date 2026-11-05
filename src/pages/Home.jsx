@@ -1,4 +1,4 @@
-
+﻿
 // Image and Video Import
 import Banner from "../assets/Images/banner.mp4"
 
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import HighlightText from '../components/core/HomePage/HighlightText'
 import CTAButton from "../components/core/HomePage/Button"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
-import Footer from "../components/common/footer"
+import Footer from "../components/common/Footer"
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
 import TimelineSection from "../components/core/HomePage/TimelineSection"
 import InstructorSection from "../components/core/HomePage/InstructorSection"

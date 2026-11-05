@@ -1,6 +1,10 @@
-// Importing necessary modules and packages
+// Load environment variables immediately before any imports
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const app = express();
+const os = require("os");
 const userRoutes = require("./routes/user");
 const profileRoutes = require("./routes/profile");
 const courseRoutes = require("./routes/Course");
@@ -11,13 +15,9 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
-const dotenv = require("dotenv");
 
 // Setting up port number
 const PORT = process.env.PORT || 4000;
-
-// Loading environment variables from .env file
-dotenv.config();
 
 // Connecting to database
 database.connect();
@@ -34,7 +34,7 @@ app.use(
 app.use(
 	fileUpload({
 		useTempFiles: true,
-		tempFileDir: "/tmp/",
+		tempFileDir: os.tmpdir(),
 	})
 );
 

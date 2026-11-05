@@ -7,7 +7,7 @@ const mongoose = require("mongoose")
 const {
   courseEnrollmentEmail,
 } = require("../mail/templates/courseEnrollmentEmail")
-const { paymentSuccessEmail } = require("../mail/templates/paymentSuccessEmail")
+const { paymentSuccessEmail } = require("../mail/templates/PaymentSuccessEmail")
 const CourseProgress = require("../models/CourseProgress")
 
 // Capture the payment and initiate the Razorpay order
@@ -35,7 +35,7 @@ exports.capturePayment = async (req, res) => {
 
       // Check if the user is already enrolled in the course
       const uid = new mongoose.Types.ObjectId(userId)
-      if (course.studentsEnrolled.includes(uid)) {
+      if (course.studentsEnroled.includes(uid)) {
         return res
           .status(200)
           .json({ success: false, message: "Student is already Enrolled" })
@@ -151,7 +151,7 @@ const enrollStudents = async (courses, userId, res) => {
       // Find the course and enroll the student in it
       const enrolledCourse = await Course.findOneAndUpdate(
         { _id: courseId },
-        { $push: { studentsEnrolled: userId } },
+        { $push: { studentsEnroled: userId } },
         { new: true }
       )
 
