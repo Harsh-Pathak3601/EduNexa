@@ -1,4 +1,4 @@
-exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
+﻿exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
   return `<!DOCTYPE html>
     <html>
     
@@ -67,17 +67,16 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
     
     <body>
         <div class="container">
-            <a href="https://studynotion-edtech-project.vercel.app"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
-                    alt="StudyNotion Logo"></a>
+            <a href="/" style="text-decoration: none; display: inline-block; margin-bottom: 20px;"><div style="background: #000814; padding: 12px 28px; border-radius: 8px; display: inline-block; border: 1px solid #2C333F;"><span style="font-family: Arial, sans-serif; font-size: 26px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px;">Edu<span style="color: #FFD60A;">nexa</span></span></div></a>
             <div class="message">Course Payment Confirmation</div>
             <div class="body">
                 <p>Dear ${name},</p>
-                <p>We have received a payment of <span class='highlight'>₹${amount}</span></p>.
+                <p>We have received a payment of <span class='highlight'>â‚¹${amount}</span></p>.
                 <p>Your Payment ID is <b>${paymentId}</b></p>
                 <p>Your Order ID is <b>${orderId}</b></p>
             </div>
             <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-                    href="mailto:info@studynotion.com">info@studynotion.com</a>. We are here to help!</div>
+                    href="mailto:info@Edunexa.com">info@Edunexa.com</a>. We are here to help!</div>
         </div>
     </body>
     

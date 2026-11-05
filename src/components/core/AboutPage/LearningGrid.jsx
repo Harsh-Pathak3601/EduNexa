@@ -8,7 +8,7 @@ const LearningGridArray = [
     heading: "World-Class Learning for",
     highliteText: "Anyone, Anywhere",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+      "Edunexa partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
     BtnText: "Learn More",
     BtnLink: "/",
   },
@@ -22,25 +22,25 @@ const LearningGridArray = [
     order: 2,
     heading: "Our Learning Methods",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Edunexa partners with more than 275+ leading universities and companies to bring flexible, modern education.",
   },
   {
     order: 3,
     heading: "Certification",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Gain verifiable, industry-recognized certificates with every course you master on Edunexa.",
   },
   {
     order: 4,
     heading: `Rating "Auto-grading"`,
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Get instant, actionable feedback with Edunexa's automated grading and hands-on code reviews.",
   },
   {
     order: 5,
     heading: "Ready to Work",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Build production-grade portfolio projects and step directly into in-demand tech roles.",
   },
 ];
 
