@@ -1,6 +1,8 @@
 import "./App.css"
-import { Route, Routes } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useEffect } from "react"
+import { Route, Routes, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { getUserDetails } from "./services/operations/profileAPI"
 
 import Navbar from "./components/common/Navbar"
 import OpenRoute from "./components/core/Auth/OpenRoute"
@@ -34,7 +36,16 @@ import VideoDetails from "./components/core/ViewCourse/VideoDetails"
 import { ACCOUNT_TYPE } from "./utils/constants"
 
 function App() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { user } = useSelector((state) => state.profile)
+  const { token } = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    if (token && !user) {
+      dispatch(getUserDetails(token, navigate))
+    }
+  }, [token, user, dispatch, navigate])
 
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
