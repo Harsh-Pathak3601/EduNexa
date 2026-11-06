@@ -1,5 +1,4 @@
-﻿import { useEffect, useState } from "react"
-import { BiDotsVerticalRounded } from "react-icons/bi"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 

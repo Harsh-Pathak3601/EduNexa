@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
-import Course_Card from "./Course_Card"
+import CourseCard from "./Course_Card"
 
 function Course_Slider({ Courses }) {
   const sliderRef = useRef(null)
@@ -39,7 +39,7 @@ function Course_Slider({ Courses }) {
                 key={course._id || i}
                 className="w-[280px] sm:w-[320px] flex-shrink-0"
               >
-                <Course_Card course={course} Height={"h-[200px]"} />
+                <CourseCard course={course} Height={"h-[200px]"} />
               </div>
             ))}
           </div>

@@ -1,4 +1,4 @@
-﻿import React from "react"
+import React from "react"
 import { HiOutlineVideoCamera } from "react-icons/hi"
 
 function CourseSubSectionAccordion({ subSec }) {

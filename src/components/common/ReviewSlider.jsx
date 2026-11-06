@@ -1,5 +1,5 @@
-﻿import React, { useEffect, useState, useRef } from "react"
-import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
+import React, { useEffect, useState, useRef } from "react"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import { apiConnector } from "../../services/apiConnector"
 import { ratingsEndpoints } from "../../services/apis"
 import RatingStars from "./RatingStars"
