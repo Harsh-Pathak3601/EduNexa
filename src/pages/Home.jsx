@@ -46,11 +46,10 @@ const Home = () => {
           instructors.
         </div>
 
-        <div className='flex flex-row gap-7 mt-8'>
+        <div className='flex flex-row flex-wrap justify-center gap-4 sm:gap-7 mt-8'>
           <CTAButton active={true} linkto={"/signup"}>
             Learn More
           </CTAButton>
-
 
           <CTAButton active={false} linkto={"/login"}>
             Book a Demo

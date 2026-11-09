@@ -40,7 +40,7 @@ function Template({ title, description1, description2, image, formType }) {
               width={558}
               height={480}
               loading="lazy"
-              className="absolute -top-4 right-4 z-10 h-[407px] rounded-sm"
+              className="absolute -top-3 sm:-top-4 right-3 sm:right-4 z-10 h-full w-full object-cover rounded-sm"
             />
           </div>
         </div>

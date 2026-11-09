@@ -48,7 +48,7 @@ function App() {
   }, [token, user, dispatch, navigate])
 
   return (
-    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
+    <div className="flex min-h-screen w-full flex-col bg-richblack-900 font-inter overflow-x-hidden">
       <Navbar />
 
       <Routes>

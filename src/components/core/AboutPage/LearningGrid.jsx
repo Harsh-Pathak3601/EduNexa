@@ -46,40 +46,40 @@ const LearningGridArray = [
 
 const LearningGrid = () => {
   return (
-    <div className="grid mx-auto w-[350px] xl:w-fit grid-cols-1 xl:grid-cols-4 mb-12">
+    <div className="grid mx-auto w-full max-w-maxContent grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mb-12">
       {LearningGridArray.map((card, i) => {
         return (
           <div
             key={i}
-            className={`${i === 0 && "xl:col-span-2 xl:h-[294px]"}  ${
+            className={`${
+              i === 0 && "md:col-span-2 xl:col-span-2 md:h-auto xl:h-[294px]"
+            } ${
               card.order % 2 === 1
-                ? "bg-richblack-700 h-[294px]"
+                ? "bg-richblack-700 h-auto min-h-[220px] xl:h-[294px]"
                 : card.order % 2 === 0
-                ? "bg-richblack-800 h-[294px]"
+                ? "bg-richblack-800 h-auto min-h-[220px] xl:h-[294px]"
                 : "bg-transparent"
-            } ${card.order === 3 && "xl:col-start-2"}  `}
+            } ${card.order === 3 && "xl:col-start-2"}`}
           >
             {card.order < 0 ? (
-              <div className="xl:w-[90%] flex flex-col gap-3 pb-10 xl:pb-0">
-                <div className="text-4xl font-semibold ">
-                  {card.heading}
-                  <HighlightText text={card.highliteText} />
+              <div className="w-full xl:w-[90%] flex flex-col gap-3 pb-8 md:pb-6 xl:pb-0 pr-0 md:pr-6">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+                  {card.heading} <HighlightText text={card.highliteText} />
                 </div>
-                <p className="text-richblack-300 font-medium">
+                <p className="text-richblack-300 font-medium text-sm sm:text-base leading-relaxed">
                   {card.description}
                 </p>
 
-                <div className="w-fit mt-2">
+                <div className="w-fit mt-3">
                   <CTAButton active={true} linkto={card.BtnLink}>
                     {card.BtnText}
                   </CTAButton>
                 </div>
               </div>
             ) : (
-              <div className="p-8 flex flex-col gap-8">
-                <h1 className="text-richblack-5 text-lg">{card.heading}</h1>
-
-                <p className="text-richblack-300 font-medium">
+              <div className="p-6 sm:p-8 flex flex-col gap-4 sm:gap-6 justify-center h-full">
+                <h1 className="text-richblack-5 text-base sm:text-lg font-semibold">{card.heading}</h1>
+                <p className="text-richblack-300 font-medium text-xs sm:text-sm leading-relaxed">
                   {card.description}
                 </p>
               </div>

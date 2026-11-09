@@ -106,26 +106,25 @@ const ContactUsForm = () => {
           Phone Number
         </label>
 
-        <div className="flex gap-5">
-          <div className="flex w-[81px] flex-col gap-2">
+        <div className="flex gap-3 sm:gap-5">
+          <div className="flex w-[78px] sm:w-[81px] shrink-0 flex-col gap-2">
             <select
               type="text"
-              name="firstname"
-              id="firstname"
-              placeholder="Enter first name"
+              name="countrycode"
+              id="countrycode"
               className="form-style"
               {...register("countrycode", { required: true })}
             >
               {CountryCode.map((ele, i) => {
                 return (
                   <option key={i} value={ele.code}>
-                    {ele.code} -{ele.country}
+                    {ele.code} - {ele.country}
                   </option>
                 )
               })}
             </select>
           </div>
-          <div className="flex w-[calc(100%-90px)] flex-col gap-2">
+          <div className="flex flex-1 min-w-0 flex-col gap-2">
             <input
               type="number"
               name="phonenumber"

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { VscSignOut } from "react-icons/vsc"
+import { VscClose, VscSignOut } from "react-icons/vsc"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
@@ -8,7 +8,7 @@ import { logout } from "../../../services/operations/authAPI"
 import ConfirmationModal from "../../common/ConfirmationModal"
 import SidebarLink from "./SidebarLink"
 
-export default function Sidebar() {
+export default function Sidebar({ open, setOpen }) {
   const { user, loading: profileLoading } = useSelector(
     (state) => state.profile
   )
@@ -20,7 +20,7 @@ export default function Sidebar() {
 
   if (profileLoading || authLoading) {
     return (
-      <div className="grid h-[calc(100vh-3.5rem)] min-w-[220px] items-center border-r-[1px] border-r-richblack-700 bg-richblack-800">
+      <div className="hidden md:grid h-[calc(100vh-3.5rem)] min-w-[220px] items-center border-r-[1px] border-r-richblack-700 bg-richblack-800">
         <div className="spinner"></div>
       </div>
     )
@@ -28,7 +28,8 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
+      {/* Desktop Sidebar */}
+      <div className="hidden md:flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
         <div className="flex flex-col">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
@@ -54,7 +55,7 @@ export default function Sidebar() {
                 btn2Handler: () => setConfirmationModal(null),
               })
             }
-            className="px-8 py-2 text-sm font-medium text-richblack-300"
+            className="px-8 py-2 text-sm font-medium text-richblack-300 hover:text-richblack-50 transition-colors"
           >
             <div className="flex items-center gap-x-2">
               <VscSignOut className="text-lg" />
@@ -63,6 +64,74 @@ export default function Sidebar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Sidebar Overlay Drawer */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex md:hidden bg-black/70 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setOpen && setOpen(false)}
+        >
+          <div
+            className="flex h-full w-[260px] flex-col border-r border-richblack-700 bg-richblack-800 py-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-6 pb-4 border-b border-richblack-700">
+              <p className="text-base font-semibold text-richblack-5">Dashboard</p>
+              <button
+                onClick={() => setOpen && setOpen(false)}
+                className="text-richblack-200 hover:text-white p-1"
+                aria-label="Close sidebar"
+              >
+                <VscClose className="text-2xl" />
+              </button>
+            </div>
+
+            <div className="flex flex-col py-4 overflow-y-auto">
+              {sidebarLinks.map((link) => {
+                if (link.type && user?.accountType !== link.type) return null
+                return (
+                  <SidebarLink
+                    key={link.id}
+                    link={link}
+                    iconName={link.icon}
+                    onClick={() => setOpen && setOpen(false)}
+                  />
+                )
+              })}
+            </div>
+
+            <div className="mx-auto my-4 h-[1px] w-10/12 bg-richblack-700" />
+
+            <div className="flex flex-col">
+              <SidebarLink
+                link={{ name: "Settings", path: "/dashboard/settings" }}
+                iconName="VscSettingsGear"
+                onClick={() => setOpen && setOpen(false)}
+              />
+              <button
+                onClick={() => {
+                  if (setOpen) setOpen(false)
+                  setConfirmationModal({
+                    text1: "Are you sure?",
+                    text2: "You will be logged out of your account.",
+                    btn1Text: "Logout",
+                    btn2Text: "Cancel",
+                    btn1Handler: () => dispatch(logout(navigate)),
+                    btn2Handler: () => setConfirmationModal(null),
+                  })
+                }}
+                className="px-8 py-2 text-sm font-medium text-richblack-300 hover:text-richblack-50 transition-colors"
+              >
+                <div className="flex items-center gap-x-2">
+                  <VscSignOut className="text-lg" />
+                  <span>Logout</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   )
