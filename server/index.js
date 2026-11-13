@@ -21,13 +21,31 @@ const PORT = process.env.PORT || 4000;
 
 // Connecting to database
 database.connect();
- 
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+
+// CORS — allow Vercel frontend + localhost dev
+const allowedOrigins = [
+	"http://localhost:3000",
+	"https://edunexa-edtech.vercel.app",
+	process.env.FRONTEND_URL,
+].filter(Boolean);
+
 app.use(
 	cors({
-		origin: "*",
+		origin: function (origin, callback) {
+			// Allow requests with no origin (mobile apps, curl, Postman)
+			if (!origin) return callback(null, true);
+			if (
+				allowedOrigins.some((allowed) => origin === allowed) ||
+				origin.endsWith(".vercel.app")
+			) {
+				return callback(null, true);
+			}
+			return callback(null, true); // Allow all for now; tighten later
+		},
 		credentials: true,
 	})
 );
