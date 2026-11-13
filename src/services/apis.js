@@ -1,4 +1,7 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1"
+const rawBaseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1"
+// Normalize URL: strip trailing slashes and ensure /api/v1 is present
+const cleanBaseUrl = rawBaseUrl.replace(/\/+$/, "")
+const BASE_URL = cleanBaseUrl.endsWith("/api/v1") ? cleanBaseUrl : `${cleanBaseUrl}/api/v1`
 
 // AUTH ENDPOINTS
 export const endpoints = {
