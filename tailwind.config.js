@@ -3,7 +3,11 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      inter: ["Inter", "sans-serif"],
+      inter: ["var(--font-inter)", "Inter", "sans-serif"],
+      dancing: ["var(--font-dancing)", "Dancing Script", "cursive"],
+      serif: ["var(--font-serif)", "Instrument Serif", "serif"],
+      kaushan: ["var(--font-kaushan)", "Kaushan Script", "cursive"],
+      satisfy: ["var(--font-satisfy)", "Satisfy", "cursive"],
       "edu-sa": ["Edu SA Beginner", "cursive"],
       mono: ["Roboto Mono", "monospace"],
     },

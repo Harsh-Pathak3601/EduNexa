@@ -14,14 +14,13 @@ const {
 
 export function updateDisplayPicture(token, formData) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...")
+    const toastId = toast.loading("Uploading display picture...")
     try {
       const response = await apiConnector(
         "PUT",
         UPDATE_DISPLAY_PICTURE_API,
         formData,
         {
-          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         }
       )
@@ -36,11 +35,14 @@ export function updateDisplayPicture(token, formData) {
       toast.success("Display Picture Updated Successfully")
       dispatch(setUser(response.data.data))
       localStorage.setItem("user", JSON.stringify(response.data.data))
+      toast.dismiss(toastId)
+      return response.data.data
     } catch (error) {
       console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error)
-      toast.error("Could Not Update Display Picture")
+      toast.error(error?.response?.data?.message || "Could Not Update Display Picture")
+      toast.dismiss(toastId)
+      throw error
     }
-    toast.dismiss(toastId)
   }
 }
 

@@ -33,7 +33,10 @@ const Home = () => {
 
                 {/* Heading */}
 
-        <div className='text-center text-4xl font-semibold mt-7'>
+        <p className="font-dancing text-2xl sm:text-3xl text-yellow-50 font-bold tracking-wide mt-6 mb-1 text-center">
+          Code Your Ambition Into Reality
+        </p>
+        <div className='text-center text-3xl sm:text-4xl font-semibold'>
             Empower Your Future with 
             <HighlightText text={"Coding Skills"}/>
         </div>

@@ -29,10 +29,14 @@ const ExploreMore = () => {
     <div>
       {/* Explore more section */}
       <div>
-        <div className="text-4xl font-semibold text-center my-10">
-          Unlock the
-          <HighlightText text={"Power of Code"} />
-          <p className="text-center text-richblack-300 text-lg font-semibold mt-1">
+        <div className="text-center my-10">
+          <p className="font-satisfy text-2xl text-yellow-50 mb-1">
+            Tailored for every ambition
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-semibold">
+            Unlock the <HighlightText text={"Power of Code"} />
+          </h2>
+          <p className="text-center text-richblack-300 text-base sm:text-lg font-semibold mt-2">
             Learn to Build Anything You Can Imagine
           </p>
         </div>

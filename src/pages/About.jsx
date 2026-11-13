@@ -19,6 +19,9 @@ const About = () => {
       <section className="bg-richblack-700">
         <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
           <header className="mx-auto pt-14 pb-8 sm:py-20 text-2xl sm:text-3xl lg:text-4xl font-semibold lg:w-[70%]">
+            <p className="font-dancing text-2xl sm:text-3xl text-yellow-50 font-bold mb-3 tracking-wide">
+              Pioneering the Next Era of Learning
+            </p>
             Driving Innovation in Online Education for a{" "}
             <HighlightText text={"Brighter Future"} />
             <p className="mx-auto mt-3 text-center text-sm sm:text-base font-medium text-richblack-300 lg:w-[95%]">
@@ -67,9 +70,12 @@ const About = () => {
           {/* Founding Story */}
           <div className="flex flex-col items-center gap-8 sm:gap-10 lg:flex-row justify-between">
             <div className="my-8 sm:my-16 lg:my-24 flex w-full lg:w-[50%] flex-col gap-6 lg:gap-10">
-              <h1 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-3xl sm:text-4xl font-semibold text-transparent lg:w-[70%]">
-                Our Founding Story
-              </h1>
+              <div>
+                <p className="font-satisfy text-xl text-yellow-50 mb-1">Our Journey</p>
+                <h1 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-3xl sm:text-4xl font-semibold text-transparent lg:w-[70%]">
+                  Our Founding Story
+                </h1>
+              </div>
               <p className="text-sm sm:text-base font-medium text-richblack-300 lg:w-[95%]">
                 Our e-learning platform was born out of a shared vision and
                 passion for transforming education. It all began with a group of
@@ -100,9 +106,12 @@ const About = () => {
           {/* Vision & Mission */}
           <div className="flex flex-col items-center gap-8 lg:gap-16 lg:flex-row justify-between pb-10 sm:pb-16">
             <div className="flex w-full lg:w-[45%] flex-col gap-4 sm:gap-6">
-              <h1 className="bg-gradient-to-b from-[#FF512F] to-[#F09819] bg-clip-text text-3xl sm:text-4xl font-semibold text-transparent">
-                Our Vision
-              </h1>
+              <div>
+                <p className="font-kaushan text-base text-yellow-50 mb-1">Vision for Tomorrow</p>
+                <h1 className="bg-gradient-to-b from-[#FF512F] to-[#F09819] bg-clip-text text-3xl sm:text-4xl font-semibold text-transparent">
+                  Our Vision
+                </h1>
+              </div>
               <p className="text-sm sm:text-base font-medium text-richblack-300 leading-relaxed">
                 With this vision in mind, we set out on a journey to create an
                 e-learning platform that would revolutionize the way people
@@ -113,9 +122,12 @@ const About = () => {
               </p>
             </div>
             <div className="flex w-full lg:w-[45%] flex-col gap-4 sm:gap-6">
-              <h1 className="bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text text-3xl sm:text-4xl font-semibold">
-                Our Mission
-              </h1>
+              <div>
+                <p className="font-dancing text-xl text-caribbeangreen-100 font-bold mb-1">Our Core Commitment</p>
+                <h1 className="bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text text-3xl sm:text-4xl font-semibold">
+                  Our Mission
+                </h1>
+              </div>
               <p className="text-sm sm:text-base font-medium text-richblack-300 leading-relaxed">
                 Our mission goes beyond just delivering courses online. We wanted to create a vibrant community of learners, where individuals can connect, collaborate, and learn from one another. We believe that knowledge thrives in an environment of sharing and dialogue, and we foster this spirit of collaboration through forums, live sessions, and networking opportunities.
               </p>

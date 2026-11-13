@@ -10,9 +10,14 @@ const LearningLanguageSection = () => {
     <div className='mt-[130px]'>
         <div className='flex flex-col gap-5'>
          
-         <div className='text-4xl font-semibold text-center'>
-            Your Swiss Knife for
-            <HighlightText text={" learning any language"} />
+         <div>
+           <p className="font-kaushan text-xl text-yellow-50 mb-1 text-center">
+             Adaptive & Practical
+           </p>
+           <div className='text-3xl sm:text-4xl font-semibold text-center'>
+              Your Swiss Knife for
+              <HighlightText text={" learning any language"} />
+           </div>
          </div>
 
          <div className='text-center text-richblack-600 mx-auto text-base font-medium w-[70%]'>

@@ -11,9 +11,14 @@ export default function MyProfile() {
 
   return (
     <>
-      <h1 className="mb-8 sm:mb-14 text-2xl sm:text-3xl font-medium text-richblack-5">
-        My Profile
-      </h1>
+      <div className="mb-8 sm:mb-12">
+        <p className="font-dancing text-2xl sm:text-3xl text-yellow-50 font-bold mb-1">
+          Welcome back, {user?.firstName} 👋
+        </p>
+        <h1 className="text-2xl sm:text-3xl font-medium text-richblack-5">
+          My Profile
+        </h1>
+      </div>
 
       {/* Profile Header Card */}
       <div className="flex flex-col sm:flex-row gap-y-4 sm:items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-4 sm:p-8 sm:px-12">

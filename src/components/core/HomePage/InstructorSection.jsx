@@ -28,9 +28,14 @@ const InstructorSection = () => {
 
     {/* Text */}
     <div className="w-full md:w-[50%] flex gap-6 md:gap-10 flex-col">
-      <h1 className="text-3xl md:text-4xl font-semibold">
-        Become an <HighlightText text={"instructor"} />
-      </h1>
+      <div>
+        <p className="font-dancing text-2xl text-yellow-50 font-bold tracking-wide mb-1">
+          Instructors at Edunexa
+        </p>
+        <h1 className="text-3xl md:text-4xl font-semibold">
+          Become an <HighlightText text={"instructor"} />
+        </h1>
+      </div>
 
       <p className="font-medium text-[14px] md:text-[16px] text-justify text-richblack-300">
         Instructors from around the world teach millions of students on

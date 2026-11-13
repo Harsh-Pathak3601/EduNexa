@@ -147,16 +147,18 @@ exports.updateDisplayPicture = async (req, res) => {
       })
     }
 
-    const displayPicture = req.files.displayPicture
+    const displayPicture = Array.isArray(req.files.displayPicture)
+      ? req.files.displayPicture[0]
+      : req.files.displayPicture
     const userId = req.user.id
 
     console.log("Uploading image for user:", userId)
-    
+
     const image = await uploadImageToCloudinary(
       displayPicture,
       process.env.FOLDER_NAME,
       1000,
-      1000
+      100
     )
     console.log("Image uploaded successfully:", image.secure_url)
 
@@ -165,6 +167,10 @@ exports.updateDisplayPicture = async (req, res) => {
       { image: image.secure_url },
       { new: true }
     )
+      .populate("additionalDetails")
+      .exec()
+
+    updatedProfile.password = undefined
 
     return res.status(200).json({
       success: true,

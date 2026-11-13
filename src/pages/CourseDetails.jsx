@@ -153,8 +153,11 @@ function CourseDetails() {
                 <span>{`${studentsEnroled.length} students enrolled`}</span>
               </div>
               <div>
-                <p className="">
-                  Created By {`${instructor.firstName} ${instructor.lastName}`}
+                <p className="flex items-center gap-x-2 text-richblack-100">
+                  <span>Created By</span>
+                  <span className="font-satisfy text-xl text-yellow-50 font-normal">
+                    {`${instructor.firstName} ${instructor.lastName}`}
+                  </span>
                 </p>
               </div>
               <div className="flex flex-wrap gap-5 text-lg">
